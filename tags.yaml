@@ -1,0 +1,24 @@
+##########################################
+#                                        #
+#  A list of every /tag in the datapack  #
+#                                        #
+##########################################
+
+#######################################################################################
+#                                                                                     #
+# How it works:                                                                       #
+# custom_ai.<bot_type>.<bot/node>.<node_type>                                         #
+#                                                                                     #
+# So if you wanted a basic bot you would use,                                         #
+# custom_ai.basic.bot                                                                 #
+#                                                                                     #
+# And if you wanted a tree node for the basic bot AI to interact with you would use,  #
+# custom_ai.basic.node.tree                                                           #
+#                                                                                     #
+#######################################################################################
+
+---
+custom_ai:  # The datapack
+  basic:  # Tags for the basic AI
+    bot # Makes an entity use the basic AI
+---

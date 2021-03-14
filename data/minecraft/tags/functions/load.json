@@ -1,5 +1,6 @@
 {
 	"values": [
+		"ai_global:load",
 		"basic_ai:load"
 	]
 }

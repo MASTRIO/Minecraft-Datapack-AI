@@ -1,0 +1,1 @@
+summon villager ~ ~ ~ {Tags:["custom_ai.basic.bot"]}
