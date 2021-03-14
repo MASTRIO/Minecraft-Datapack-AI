@@ -12,10 +12,16 @@ scoreboard players add @e[tag=custom_ai.basic.bot] basic_moving 0
 # Make entity a bot
 execute as @e[tag=custom_ai.basic.bot] run data merge entity @s {NoAI:1b}
 
-# TEMP: basic motion system
-execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:walk] at @s run scoreboard players add @s basic_moving 10
-execute as @e[tag=custom_ai.basic.bot] if score @s basic_moving matches 1.. run tp @s ^ ^ ^0.1
+## Basic motion system
+# Forward Motion
+execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:walk,predicate=!basic_ai:walk_far] if score @s basic_moving matches 0 at @s run scoreboard players add @s basic_moving 3
+execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:walk,predicate=basic_ai:walk_far] if score @s basic_moving matches 0 at @s run scoreboard players add @s basic_moving 7
+execute as @e[tag=custom_ai.basic.bot] if score @s basic_moving matches 1.. at @s run tp @s ^ ^ ^0.1 ~ ~
 execute as @e[tag=custom_ai.basic.bot] if score @s basic_moving matches 1.. run scoreboard players remove @s basic_moving 1
-
-execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:turn_left] at @s run tp @s ^-45 ^ ^
-execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:turn_right] at @s run tp @s ^45 ^ ^
+# Left / Right Motion
+execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:turn_left] if score @s basic_moving matches 1.. at @s run tp @s ~ ~ ~ ~-45 ~
+execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:turn_right] if score @s basic_moving matches 1.. at @s run tp @s ~ ~ ~ ~45 ~
+# Gravity (Thanks alot NoAI)
+execute as @e[tag=custom_ai.basic.bot] if block ~ ~-0.5 ~ minecraft:air run tp @s ~ ~-0.5 ~
+# Jumping
+execute as @e[tag=custom_ai.basic.bot] if score @s basic_moving matches 1.. unless block ^ ^ ^0.5 minecraft:air run tp @s ^ ^1 ^0.5
