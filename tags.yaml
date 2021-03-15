@@ -7,7 +7,7 @@
 #######################################################################################
 #                                                                                     #
 # How it works:                                                                       #
-# custom_ai.<bot_type>.<bot/node>.<node_type>                                         #
+# custom_ai.<bot_type>.<bot/nodes/events>.<node_type/event_type>                      #
 #                                                                                     #
 # So if you wanted a basic bot you would use,                                         #
 # custom_ai.basic.bot                                                                 #
@@ -19,11 +19,22 @@
 
 ---
 custom_ai:  # The datapack
-  basic:  # Tags for the basic AI
+  basic:
     bot # Makes an entity use the basic AI
-    events: # Things that can happen to the bot (Not to be added by players, added by the game)
+    events:
       is_jumping # Is the bot jumping
       is_walking # Is the bot walking
       is_falling # Is the bot falling from gravity
-
+  world_miner:
+    bot # Makes an entity use the World Miner AI
+    events:
+      is_mining # Is the bot Mining
+      is_warping # Is the bot warping
+  crossbow_turret:
+    bot # Makes an entity use the Crossbow Turret AI
+    nodes:
+      arrow # Arrow that is shot out of bot
+    events:
+      is_aiming # Is the bot aiming at an enemy
+      is_shooting # Is the bot shooting at an enemy
 ---
