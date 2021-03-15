@@ -15,4 +15,4 @@ execute as @e[tag=custom_ai.crossbow_turret.bot] if entity @e[type=#crossbow_tur
 execute as @e[tag=custom_ai.crossbow_turret.bot,tag=custom_ai.crossbow_turret.events.is_aiming] run tp @s ~ ~ ~ facing entity @e[type=#crossbow_turret:turret_enemy,distance=..10,sort=nearest,limit=1] eyes
 
 # Move Arrow Node
-execute as @e[tag=custom_ai.crossbow_turret.nodes.arrow] at @s run tp @s ^ ^ ^0.5
+execute as @e[tag=custom_ai.crossbow_turret.nodes.arrow] at @s run tp @s ^ ^ ^1
