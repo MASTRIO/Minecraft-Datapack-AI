@@ -21,4 +21,9 @@
 custom_ai:  # The datapack
   basic:  # Tags for the basic AI
     bot # Makes an entity use the basic AI
+    events: # Things that can happen to the bot (Not to be added by players, added by the game)
+      is_jumping # Is the bot jumping
+      is_walking # Is the bot walking
+      is_falling # Is the bot falling from gravity
+
 ---
