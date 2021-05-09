@@ -27,6 +27,7 @@ execute as @e[tag=custom_ai.basic.bot,predicate=basic_ai:turn_right] if score @s
 execute as @e[tag=custom_ai.basic.bot,tag=!custom_ai.basic.events.is_jumping] if block ~ ~-0.5 ~ minecraft:air run tag @s add custom_ai.basic.events.is_falling
 execute as @e[tag=custom_ai.basic.bot,tag=custom_ai.basic.events.is_falling] at @s run tp @s ~ ~-0.5 ~
 # Jumping
+# TODO: Make this work
 execute as @e[tag=custom_ai.basic.bot] if score @s basic_moving matches 1.. unless block ^ ^ ^0.5 minecraft:air run tag @s add custom_ai.basic.events.is_jumping
 execute as @e[tag=custom_ai.basic.bot,tag=custom_ai.basic.events.is_jumping] unless block ~ ~ ~ #basic_ai:no_jump at @s run tp @s ~ ~1 ~
 execute as @e[tag=custom_ai.basic.bot,tag=custom_ai.basic.events.is_jumping] run tag @s remove custom_ai.basic.events.is_jumping
